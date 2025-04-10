@@ -1,74 +1,19 @@
-function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSETMC Symbol Redirect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>TSETMC Symbol Redirect</h1>
+        <input type="text" id="stockSymbol" placeholder="Enter Stock Symbol (e.g., آگاس)">
+        <button id="goButton">Go</button>
+        <p id="error-message" style="color: red; margin-top: 10px; display: none;">Error: Could not find the symbol.</p>
+    </div>
 
-        function redirectToTSETMC(symbol) {
-            if (!symbol) {
-                alert("Please enter a stock symbol.");
-                return;
-            }
-
-            const searchUrl = `https://cdn.tsetmc.com/api/Instrument/GetInstrumentSearch/${encodeURIComponent(symbol)}`;
-
-            fetch(searchUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    document.getElementById("error-message").style.display = "none";
-                    if (data && data.instrumentSearch && data.instrumentSearch.length > 0) {
-                        const firstResult = data.instrumentSearch[0];
-                        const inscode = firstResult.insCode;
-                        if (inscode) {
-                            window.location.href = `https://tsetmc.com/instInfo/${inscode}`;
-                        } else {
-                            document.getElementById("error-message").textContent = "Error: Inscode not found in the response.";
-                            document.getElementById("error-message").style.display = "block";
-                        }
-                    } else {
-                        document.getElementById("error-message").textContent = "Error: No results found for the symbol.";
-                        document.getElementById("error-message").style.display = "block";
-                    }
-                })
-                .catch(error => {
-                    console.error("Fetch error:", error);
-                    document.getElementById("error-message").textContent = "Error: Could not fetch data from TSETMC.";
-                    document.getElementById("error-message").style.display = "block";
-                });
-        }
-
-        // Get the symbol from the URL parameter on page load
-        const urlSymbol = getUrlParameter('symbol');
-        if (urlSymbol) {
-            // Hide the input field and button if a symbol is in the URL
-            const inputElement = document.getElementById("stockSymbol");
-            const buttonElement = document.querySelector("button");
-            if (inputElement && buttonElement) {
-                inputElement.style.display = "none";
-                buttonElement.style.display = "none";
-            }
-            redirectToTSETMC(urlSymbol);
-        } else {
-            // Add event listener for the button if no symbol in URL
-            const goButton = document.querySelector("button");
-            if (goButton) {
-                goButton.addEventListener("click", function() {
-                    const symbol = document.getElementById("stockSymbol").value.trim();
-                    redirectToTSETMC(symbol);
-                });
-            }
-
-            // Allow pressing Enter key in the input field to trigger the search
-            document.getElementById("stockSymbol").addEventListener("keypress", function(event) {
-                if (event.key === "Enter") {
-                    const symbol = document.getElementById("stockSymbol").value.trim();
-                    redirectToTSETMC(symbol);
-                }
-            });
-        }
+    <script src="script.js"></script>
+</body>
+</html>
