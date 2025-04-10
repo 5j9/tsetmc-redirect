@@ -1,6 +1,12 @@
-# TSETMC Symbol Redirect
+# TSETMC Redirect
 
-This is a simple webpage that allows you to quickly navigate to the instrument information page of a stock on the Tehran Stock Exchange Technology Management Co (TSETMC) website (tsetmc.com) by entering its symbol.
+https://5j9.github.io/ is a simple webpage that allows you to quickly navigate to the instrument information page of a stock on the Tehran Stock Exchange Technology Management Co (TSETMC) website ([tsetmc.com](https://tsetmc.com/)) by entering its symbol. For example:
+
+https://5j9.github.io/tsetmc-redirect/?symbol=آگاس
+
+will redirect to
+
+https://tsetmc.com/instInfo/33887145736684266
 
 It utilizes the TSETMC's public API to search for the symbol and then redirects you to the corresponding instrument's page.
 
