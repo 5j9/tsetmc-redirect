@@ -24,14 +24,12 @@ You can configure your web browser to use this page as a custom search engine. T
 2.  Go to "Search engine" -> "Manage search engines and site search."
 3.  Click "Add" under "Site search."
 4.  **Search engine:** Enter a descriptive name like "TSETMC Go".
-5.  **Shortcut:** Choose a short keyword you'll type in the address bar to trigger this search (e.g., `tmc`, `tsetmcgo`).
+5.  **Shortcut:** Choose a short keyword you'll type in the address bar to trigger this search (e.g., `tse`, `tsetmcgo`).
 6.  **URL with %s in place of query:** Enter the URL of this GitHub Pages site followed by `?symbol=%s`:
-    ```
     [https://5j9.github.io/tsetmc-redirect/?symbol=%s](https://5j9.github.io/tsetmc-redirect/?symbol=%s)
-    ```
 7.  Click "Save."
 
-   **How to Use in Chrome:** Now, in your Chrome address bar, type your chosen shortcut (e.g., `tmc`), press **Space** or **Tab**, then type the stock symbol (e.g., `آگاس`), and press Enter. You will be directly redirected to the TSETMC page for that symbol.
+   **How to Use in Chrome:** Now, in your Chrome address bar, type your chosen shortcut (e.g., `tse`), press **Space** or **Tab**, then type the stock symbol (e.g., `آگاس`), and press Enter. You will be directly redirected to the TSETMC page for that symbol.
 
 **Mozilla Firefox:**
 
@@ -40,14 +38,12 @@ You can configure your web browser to use this page as a custom search engine. T
 3.  Right-click inside the input field.
 4.  Select "Add a Keyword for this Search...".
 5.  **Name:** Enter a descriptive name like "TSETMC Go".
-6.  **Keyword:** Choose a short keyword (e.g., `tmc`, `tsetmcgo`).
+6.  **Keyword:** Choose a short keyword (e.g., `tse`, `tsetmcgo`).
 7.  **Address:** The URL of your GitHub Pages site with the `%s` placeholder should be automatically filled. If not, enter:
-    ```
     [https://5j9.github.io/tsetmc-redirect/?symbol=%s](https://5j9.github.io/tsetmc-redirect/?symbol=%s)
-    ```
 8.  Click "Save."
 
-   **How to Use in Firefox:** In your Firefox address bar, type your chosen keyword (e.g., `tmc`), press **Space**, then type the stock symbol (e.g., `آگاس`), and press Enter.
+   **How to Use in Firefox:** In your Firefox address bar, type your chosen keyword (e.g., `tse`), press **Space**, then type the stock symbol (e.g., `آگاس`), and press Enter.
 
 **Microsoft Edge:**
 
